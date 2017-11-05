@@ -28,4 +28,11 @@ mvn install:install-file -DgroupId=com.question.rest -DartifactId=question-rest 
 mvn install:install-file -DgroupId=com.question.web -DartifactId=question-web -Dversion=1.0.0 -Dpackaging=war -Dfile=/Users/angryquiz/.m2/repository/com/question/web/question-web/1.0.0/question-web-1.0.0.war -DlocalRepositoryPath=/Users/angryquiz/workspaces/angryquiz-stuff/maven-repo
 
 ```
+* git push origin master (twice to ask the password) 
+* Control-Space -> KeyChain Access (to change/check Mac password for git)
+* change login name / password
+```
+git config --global user.name
+git config --global user.name "angryquiz"
+```
 
