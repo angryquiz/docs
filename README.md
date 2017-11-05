@@ -32,7 +32,10 @@ mvn install:install-file -DgroupId=com.question.web -DartifactId=question-web -D
 * Control-Space -> KeyChain Access (to change/check Mac password for git)
 * change login name / password
 ```
+git config --global --list
 git config --global user.name
 git config --global user.name "angryquiz"
+git config --global user.email
+git config --global user.email "angryquiz77@gmail.com"
 ```
 
