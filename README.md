@@ -18,4 +18,7 @@ Documentations and notes
 * mvn jetty:run -DquestionRestEndpoint="http://localhost:8080/question-rest"
 * http://localhost:9999/question-web/
 
+## Create maven repo
+* http://kwebble.com/blog/2014/02/19/use-github-to-host-your-own-maven-repo
+
 
