@@ -38,4 +38,15 @@ git config --global user.name "angryquiz"
 git config --global user.email
 git config --global user.email "angryquiz77@gmail.com"
 ```
+### Docker ElasticSearch / Kibana install
+* docker pull nshou/elasticsearch-kibana
+* docker run -d -p 9200:9200 -p 5601:5601 nshou/elasticsearch-kibana
+* Then you can connect to Elasticsearch by localhost:9200
+* Kibana front-end by localhost:5601
+* http://localhost:9200/
+* http://localhost:5601/
+
+
+
+
 
