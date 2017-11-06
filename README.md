@@ -128,6 +128,13 @@ Reponse:
 * npm start
 * http://192.168.0.17:8100
 
+### Build Docker file 
+
+* https://github.com/cmoro-deusto/docker-tomcat8
+* https://hub.docker.com/r/angryquiz77/oracle-tomcat/
+
+
+
 
 
 
