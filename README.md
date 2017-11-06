@@ -12,7 +12,7 @@ Documentations and notes
 
 ### question-rest testing
 * mvn jetty:run -DredisServer=localhost -DredisPort=6379
-* http://localhost:8080/question-rest/apidocs/
+* http://localhost:8585/question-rest/apidocs/
 
 ### question-web testing
 * mvn jetty:run -DquestionRestEndpoint="http://localhost:8080/question-rest"
