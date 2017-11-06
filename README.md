@@ -138,6 +138,7 @@ Reponse:
 * https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container
 * Docker whale preferences - Adjust memory from 2GB to 4GB
 * docker stats (to view memory usage)
+* change jvm.options if needed on elasticsearch folder on the container. Change it from 2gb to 4gb
 
 ### Re-import data if ElasticSearch / Kibana has been rebuilt
 
