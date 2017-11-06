@@ -6,6 +6,7 @@ Documentations and notes
 * https://store.docker.com/editions/community/docker-ce-desktop-mac
 
 ### Docker Redis install
+* https://hub.docker.com/_/redis/
 * docker pull redis
 * docker run -p 6379:6379 --name some-redis -d redis
 * test telnet localhost 6379
@@ -39,6 +40,7 @@ git config --global user.email
 git config --global user.email "angryquiz77@gmail.com"
 ```
 ### Docker ElasticSearch / Kibana install
+* https://hub.docker.com/r/nshou/elasticsearch-kibana/
 * docker pull nshou/elasticsearch-kibana
 * docker run -d -p 9200:9200 -p 5601:5601 nshou/elasticsearch-kibana
 * Then you can connect to Elasticsearch by localhost:9200
