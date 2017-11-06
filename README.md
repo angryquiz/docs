@@ -124,7 +124,7 @@ Reponse:
 * Static page
 * npm install
 * npm start
-
+* http://192.168.0.17:8100
 
 
 
