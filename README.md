@@ -48,6 +48,9 @@ git config --global user.email "angryquiz77@gmail.com"
 * Sample request at http://localhost:8080/question-bank/apidocs/#!/questions/uploadJSONQuestion
 * Create index in elastic search to avoid the error below
 ```
+
+http://localhost:8080/question-bank/rest/question-bank/search/aaa
+
 {
   "error": {
     "root_cause": [
