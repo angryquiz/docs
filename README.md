@@ -139,6 +139,21 @@ Reponse:
 * Docker whale preferences - Adjust memory from 2GB to 4GB
 * docker stats (to view memory usage)
 
+### Re-import data if ElasticSearch / Kibana has been rebuilt
+
+* import mapping and data
+
+```
+docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/docs:/tmp taskrabbit/elasticsearch-dump \
+  --input=/tmp/question-bank-es-mapping.json \
+  --output=http://localhost:9200/questionbank \
+  --type=mapping
+
+docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/docs:/tmp taskrabbit/elasticsearch-dump \
+  --input=/tmp/question-bank-es-data.json \
+  --output=http://localhost:9200/questionbank \
+  --type=data
+```
 
 
 
