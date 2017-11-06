@@ -119,6 +119,12 @@ Reponse:
 * mvn jetty:run -D elasticSearchUrl="http://localhost:9200"
 * On Browser - http://localhost:8080/question-bank/apidocs/#!/questions/uploadJSONQuestion
 
+### Test / build static Web
+
+* Static page
+* npm install
+* npm start
+
 
 
 
