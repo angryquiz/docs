@@ -24,9 +24,12 @@ Documentations and notes
 * Clone - git clone https://github.com/angryquiz/maven-repo
 * Create releases:
 ```
-mvn install:install-file -DgroupId=com.question.rest -DartifactId=question-rest -Dversion=1.0.0 -Dpackaging=war -Dfile=/Users/angryquiz/.m2/repository/com/question/rest/question-rest/1.0.0/question-rest-1.0.0.war -DlocalRepositoryPath=/Users/angryquiz/workspaces/angryquiz-stuff/maven-repo
+mvn install:install-file -DgroupId=com.question.rest -DartifactId=question-rest -Dversion=1.0.0 -Dpackaging=war -Dfile=/Users/aq/.m2/repository/com/question/rest/question-rest/1.0.0/question-rest-1.0.0.war -DlocalRepositoryPath=/Users/aq/workspaces/angryquiz-stuff/maven-repo
 
-mvn install:install-file -DgroupId=com.question.web -DartifactId=question-web -Dversion=1.0.0 -Dpackaging=war -Dfile=/Users/angryquiz/.m2/repository/com/question/web/question-web/1.0.0/question-web-1.0.0.war -DlocalRepositoryPath=/Users/angryquiz/workspaces/angryquiz-stuff/maven-repo
+mvn install:install-file -DgroupId=com.question.web -DartifactId=question-web -Dversion=1.0.0 -Dpackaging=war -Dfile=/Users/aq/.m2/repository/com/question/web/question-web/1.0.0/question-web-1.0.0.war -DlocalRepositoryPath=/Users/aq/workspaces/angryquiz-stuff/maven-repo
+
+mvn install:install-file -DgroupId=com.question.static -DartifactId=question-static -Dversion=1.0.0 -Dpackaging=war -Dfile=/Users/aq/workspaces/angryquiz-stuff/tmp-web/angryquiz-1.0.0.war -DlocalRepositoryPath=/Users/aq/workspaces/angryquiz-stuff/maven-repo-branches
+
 
 ```
 * git push origin master (twice to ask the password) 
