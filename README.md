@@ -45,7 +45,51 @@ git config --global user.email "angryquiz77@gmail.com"
 * Kibana front-end by localhost:5601
 * http://localhost:9200/
 * http://localhost:5601/
+* Sample request at http://localhost:8080/question-bank/apidocs/#!/questions/uploadJSONQuestion
+* Create index in elastic search to avoid the error below
+```
+{
+  "error": {
+    "root_cause": [
+      {
+        "type": "index_not_found_exception",
+        "reason": "no such index",
+        "resource.type": "index_or_alias",
+        "resource.id": "questionbank",
+        "index_uuid": "_na_",
+        "index": "questionbank"
+      }
+    ],
+    "type": "index_not_found_exception",
+    "reason": "no such index",
+    "resource.type": "index_or_alias",
+    "resource.id": "questionbank",
+    "index_uuid": "_na_",
+    "index": "questionbank"
+  },
+  "status": 404
+}
+```
+* https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html
+* http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://www.elastic.co/guide/en/elasticsearch/reference/current/snippets/indices-create-index/3.json
+* Example
+```
+PUT questionbank
+{
+    "settings" : {
+        "number_of_shards" : 3,
+        "number_of_replicas" : 2
+    }
+}
 
+Reponse:
+
+{
+  "acknowledged": true,
+  "shards_acknowledged": true,
+  "index": "questionbank"
+}
+```
 
 
 
