@@ -111,6 +111,16 @@ Reponse:
   }
 }
 ```
+### Follow instructions for manually configuring elasticsearch 
+
+* https://github.com/angryquiz/docs/blob/master/ElasticSearchKibanaSetup.md
+
+### question-bank testing
+* mvn jetty:run -D elasticSearchUrl="http://localhost:9200"
+* On Browser - http://localhost:8080/question-bank/apidocs/#!/questions/uploadJSONQuestion
+
+
+
 
 
 
