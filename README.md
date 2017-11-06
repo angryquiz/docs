@@ -93,7 +93,24 @@ Reponse:
   "index": "questionbank"
 }
 ```
-
+* Another test http://localhost:8080/question-bank/rest/question-bank/search/aaa
+```
+{
+  "took": 9,
+  "timed_out": false,
+  "_shards": {
+    "total": 3,
+    "successful": 3,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": 0,
+    "max_score": null,
+    "hits": []
+  }
+}
+```
 
 
 
