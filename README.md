@@ -133,8 +133,11 @@ Reponse:
 * https://github.com/cmoro-deusto/docker-tomcat8
 * https://hub.docker.com/r/angryquiz77/oracle-tomcat/
 
+### Docker Memory Issue
 
-
+* https://stackoverflow.com/questions/44533319/how-to-assign-more-memory-to-docker-container
+* Docker whale preferences - Adjust memory from 2GB to 4GB
+* docker stats (to view memory usage)
 
 
 
