@@ -158,6 +158,68 @@ docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/docs:/tmp
   --output=http://localhost:9200/questionbank \
   --type=data
 ```
+## Finalize
+
+### Download required docker images
+
+```
+docker pull angryquiz77/angryquiz
+docker pull redis
+docker pull nshou/elasticsearch-kibana
+docker pull taskrabbit/elasticsearch-dump
+```
+
+### Run docker images
+
+```
+docker run -d -p 6379:6379 redis
+docker run -d -p 8080:8080 angryquiz77/angryquiz
+docker run -d -p 9200:9200 -p 5601:5601 -v /Users/aq/workspaces/angryquiz-stuff/elasticsearchdata:/home/elasticsearch/elasticsearch/data nshou/elasticsearch-kibana
+```
+
+### Import sample data
+
+* Source - sample mapping - https://raw.githubusercontent.com/angryquiz/docs/master/question-bank-es-data.json
+* Source - sample data - https://raw.githubusercontent.com/angryquiz/docs/master/question-bank-es-mapping.json
+```
+docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/docs:/tmp taskrabbit/elasticsearch-dump \
+  --input=/tmp/question-bank-es-mapping.json \
+  --output=http://localhost:9200/questionbank \
+  --type=mapping
+
+docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/docs:/tmp taskrabbit/elasticsearch-dump \
+  --input=/tmp/question-bank-es-data.json \
+  --output=http://localhost:9200/questionbank \
+  --type=data
+```
+
+### Update host file with your ip
+
+```
+cat /etc/hosts
+
+##
+# Host Database
+#
+# localhost is used to configure the loopback interface
+# when the system is booting.  Do not change this entry.
+##
+127.0.0.1	localhost
+192.168.0.17    angryquizhost
+255.255.255.255	broadcasthost
+::1             localhost 
+
+```
+
+### Links
+
+* Dashboard - http://angryquizhost:8080/ 
+* Search - http://angryquizhost:8080/dashboard/#!/questionBankSearch (search for 'a')
+* Kibana - http://angryquizhost:5601/app/kibana
+* ElasticSearch - http://angryquizhost:9200/
+* Question REST API - http://angryquizhost:8080/question-rest/apidocs/
+* Bank REST API - http://angryquizhost:8080/question-bank/apidocs/
+* Redis - telnet angryquizhost 6379
 
 
 
