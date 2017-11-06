@@ -38,8 +38,8 @@ Response:
 * Deleting index - https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-delete-index.html
 * Import mappings - localhost (remove --net=host if not importing from localhost)
 ```
-docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/angryquizone/es-dump:/tmp taskrabbit/elasticsearch-dump \
-  --input=/tmp/questionbank-mapping-6-15-2017-v1.json \
+docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/docs:/tmp taskrabbit/elasticsearch-dump \
+  --input=/tmp/question-bank-es-mapping.json \
   --output=http://localhost:9200/questionbank \
   --type=mapping
 
@@ -61,11 +61,10 @@ GET http://localhost:9200/questionbank
 * Import data (remove --net=host if not importing from localhost)
 
 ```
-docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/aq/es-dump:/tmp taskrabbit/elasticsearch-dump \
-  --input=/tmp/questionbank-data-6-15-2017-v1.json \
+docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/docs:/tmp taskrabbit/elasticsearch-dump \
+  --input=/tmp/question-bank-es-data.json \
   --output=http://localhost:9200/questionbank \
   --type=data
-
 
 Mon, 06 Nov 2017 00:57:39 GMT | starting dump
 Mon, 06 Nov 2017 00:57:40 GMT | got 13 objects from source file (offset: 0)
