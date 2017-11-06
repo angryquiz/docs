@@ -72,7 +72,7 @@ git config --global user.email "angryquiz77@gmail.com"
 ```
 * https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-create-index.html
 * http://localhost:5601/app/kibana#/dev_tools/console?load_from=https://www.elastic.co/guide/en/elasticsearch/reference/current/snippets/indices-create-index/3.json
-* Example
+* Example on Kibana console - http://localhost:5601/app/kibana#/dev_tools/console?_g=()
 ```
 PUT questionbank
 {
