@@ -5,6 +5,13 @@ Documentations and notes
 ### Docker install
 * https://store.docker.com/editions/community/docker-ce-desktop-mac
 
+### Follow the link below for using docker-compose
+* Run all the required containers in one command using docker-compose
+* https://github.com/angryquiz/docker-compose
+
+### Manual installation / testing using Docker command (not docker-compose)
+* Follow instructions below for running each containers maually.
+
 ### Docker Redis install
 * https://hub.docker.com/_/redis/
 * docker pull redis
@@ -169,7 +176,7 @@ docker pull nshou/elasticsearch-kibana
 docker pull taskrabbit/elasticsearch-dump
 ```
 
-### Run docker images
+### Run docker images manually one by one
 
 ```
 docker run -d -p 6379:6379 redis
