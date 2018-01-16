@@ -1,3 +1,4 @@
+
 #https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
@@ -19,6 +20,27 @@ curl -L https://raw.githubusercontent.com/angryquiz/docker/master/docker-compose
 mkdir -p /Users/aq/workspaces/angryquiz-stuff/elasticsearchdata/nodes
 chmod 777 -R /Users/aq/workspaces/angryquiz-stuff/elasticsearchdata
 
-elasticsearch/config/jvm.options
 
-docker-compose up -d
+#validate
+# edit angryquizhost on /etc/hosts on angryquiz container and ec2 machine - with the instance IP (ifconfig)
+#update memory usage - elasticsearch/config/jvm.options
+#start docker at reboot - systemctl status docker
+#start apps - docker-compose up -d
+
+#import data
+
+mkdir -p /Users/aq/workspaces/angryquiz-stuff/docs
+
+curl -L  https://raw.githubusercontent.com/angryquiz/docs/master/question-bank-es-mapping.json -o /Users/aq/workspaces/angryquiz-stuff/docs/question-bank-es-mapping.json 
+
+curl -L  https://raw.githubusercontent.com/angryquiz/docs/master/question-bank-es-data.json -o /Users/aq/workspaces/angryquiz-stuff/docs/question-bank-es-data.json 
+
+docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/docs:/tmp taskrabbit/elasticsearch-dump \
+  --input=/tmp/question-bank-es-mapping.json \
+  --output=http://IP:9200/questionbank \
+  --type=mapping
+
+docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/docs:/tmp taskrabbit/elasticsearch-dump \
+  --input=/tmp/question-bank-es-data.json \
+  --output=http://IP:9200/questionbank \
+  --type=data
