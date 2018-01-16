@@ -44,3 +44,7 @@ docker run --net=host --rm -ti -v /Users/aq/workspaces/angryquiz-stuff/docs:/tmp
   --input=/tmp/question-bank-es-data.json \
   --output=http://IP:9200/questionbank \
   --type=data
+  
+  
+to use port-80, modify the setenv.sh in angryquiz container
+
