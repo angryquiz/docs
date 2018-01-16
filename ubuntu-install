@@ -1,0 +1,24 @@
+#https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-16-04
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+apt-get update
+apt-cache policy docker-ce
+apt-get install -y docker-ce
+#systemctl status docker
+
+
+#https://www.digitalocean.com/community/tutorials/how-to-install-docker-compose-on-ubuntu-16-04
+curl -L https://github.com/docker/compose/releases/download/1.18.0/docker-compose-`uname -s`-`uname -m` -o /usr/local/bin/docker-compose
+chmod +x /usr/local/bin/docker-compose
+ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+docker-compose --version
+
+curl -L https://raw.githubusercontent.com/angryquiz/docker/master/docker-compose.yml -o /root/docker-compose.yml
+
+mkdir -p /Users/aq/workspaces/angryquiz-stuff/elasticsearchdata/nodes
+chmod 777 -R /Users/aq/workspaces/angryquiz-stuff/elasticsearchdata
+
+elasticsearch/config/jvm.options
+
+docker-compose up -d
