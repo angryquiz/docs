@@ -228,5 +228,32 @@ cat /etc/hosts
 * Bank REST API - http://angryquizhost:8080/question-bank/apidocs/
 * Redis - telnet angryquizhost 6379
 
+====
+
+## Docker Compose
+
+### Docker compose commands
+
+* docker-compose up -d (detached)
+* docker-compose ps (status)
+* docker-compose stop 
+* docker-compose start 
+* docker-compose down --volumes (remove the data volume)
+
+### Delete all docker containers
+
+```
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
+```
+
+### Modify /etc/hosts 
+
+```
+docker exec -it dd470a83f362 sh # container id of angryquiz77/angryquiz:latest
+Then
+vi /etc/hosts
+your-ip angryquizhost
+```
 
 
